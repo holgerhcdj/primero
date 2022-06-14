@@ -30,7 +30,7 @@
 	</style>
 </head>
 <body>
-	<h1>Menu Principal</h1>
+	<h1>Menu Principal, de tareas</h1>
 	<a class="menu" href="lista_estudiantes.php">Estudiantes</a>
     <a class="menu" href="lista_usuarios.php">Usuarios</a>
 </body>
