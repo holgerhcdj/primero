@@ -69,11 +69,12 @@ $consulta=$Estudiantes->listar_estudiantes();
 			      <td>{$c["est_genero"]}</td>
 			      <td>
 
-			      <a href=>
-			      <img src='edit.png'/>
-
-			      <a href=>
-			      <img src='delete.png'/>
+			      <a href='formulario_estudiante.php?est_id={$c["est_id"]} '>
+			          <img src='edit.png'/>
+			      </a>
+			          
+			      <a href=''>
+			           <img src='delete.png'/>
 			      </a>
 
 			      </td>
