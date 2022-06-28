@@ -8,17 +8,17 @@ class Estudiantes extends Conection{
 		return $resultado->fetch_all(MYSQLI_ASSOC);//
 	} 
 
-    function create($est_nombres,$est_apellidos,$est_cedula,$est_cuidad,$est_edad,$est_genero){
+    function create($est_nombres,$est_apellidos,$est_cedula,$est_ciudad,$est_edad,$est_genero){
     	return $this->con->query("INSERT INTO estudiantes (est_nombres, 
     		                                        est_apellidos, 
     		                                        est_cedula, 
-    		                                        est_cuidad, 
+    		                                        est_ciudad, 
     		                                        est_edad, 
     		                                        est_genero)
     	                                     values('$est_nombres',
     	                                     	    '$est_apellidos',
     	                                     	    '$est_cedula',
-    	                                     	    '$est_cuidad',
+    	                                     	    '$est_ciudad',
     	                                     	    '$est_edad',
     	                                     	    '$est_genero' ) 
     	                  ");
@@ -29,6 +29,18 @@ class Estudiantes extends Conection{
              $resultado=$this->con->query("SELECT * FROM estudiantes WHERE est_id=$est_id "); 
              return $resultado->fetch_all(MYSQLI_ASSOC)[0];
 
+    }
+
+    function update($est_nombres,$est_apellidos,$est_cedula,$est_ciudad,$est_edad,$est_genero,$est_id){
+             $this->con->query("UPDATE estudiantes 
+                                SET est_nombres='$est_nombres',
+                                est_apellidos='$est_apellidos',
+                                est_cedula='$est_cedula',
+                                est_ciudad='$est_ciudad',
+                                est_edad='$est_edad',
+                                est_genero='$est_genero'
+                                WHERE est_id=$est_id
+                ");  
     }
 
 

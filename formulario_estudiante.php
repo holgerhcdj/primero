@@ -32,6 +32,7 @@ if(isset($_GET['est_id'])){
     <h1>Formulario de registro de estudiantes</h1>
 
 	<form action="acciones_estudiantes.php" method="POST" >
+			<input type="hidden" id="est_id" name="est_id" value="<?php echo $datos['est_id'] ?>" >
 
 		<div class="contenedores" >
 			<label >Nombres</label>	
@@ -45,22 +46,22 @@ if(isset($_GET['est_id'])){
 
 		<div class="contenedores" >
 			<label for="est_cedula">Cedula</label>	
-			<input type="text" name="est_cedula" id="est_cedula" >
+			<input type="text" name="est_cedula" id="est_cedula" value="<?php echo $datos['est_cedula'] ?>" >
 		</div>
 
 		<div class="contenedores" >
 			<label for="est_ciudad">Ciudad</label>	
-			<input type="text" name="est_ciudad" id="est_ciudad" >
+			<input type="text" name="est_ciudad" id="est_ciudad" value="<?php echo $datos['est_ciudad'] ?>" >
 		</div>
 
 		<div class="contenedores" >
 			<label for="est_edad">Edad</label>	
-			<input type="text" name="est_edad" id="est_edad" >
+			<input type="text" name="est_edad" id="est_edad" value="<?php echo $datos['est_edad'] ?>" >
 		</div>
 
 		<div class="contenedores" >
 			<label for="est_genero">Género</label>	
-			<input type="text" name="est_genero" id="est_genero" >
+			<input type="text" name="est_genero" id="est_genero" value="<?php echo $datos['est_genero'] ?>" >
 		</div>
 
        <button>Guardar</button>
