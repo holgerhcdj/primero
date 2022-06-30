@@ -2,7 +2,8 @@
 require_once("Estudiantes.php");//INCLUYE LA CLASE ESTUDIANTES
 $Estudiantes=new Estudiantes(); //cREA UNA NUEVA INSTANCIA DE LA CLASE
 $datos=$_REQUEST; //CAPTURA LOS DATOS DEL FORMULARIO
-//die(print_r($datos));
+//die(var_dump(count($datos)););  //FINALIZAR EL PROCESO
+
 if(empty($datos['est_id'])){ ///CREO UN NUEVO ESTUDIANTE
 
 	$Estudiantes->create($datos['est_nombres'],
@@ -12,7 +13,9 @@ if(empty($datos['est_id'])){ ///CREO UN NUEVO ESTUDIANTE
 		$datos['est_edad'],
 		$datos['est_genero']);
 
-}else{ ///MODIFICO EL ESTUDIANTE
+}else{ ///MODIFICO/ELIMINO EL ESTUDIANTE
+
+    if( isset($datos['est_nombres'])) { //MODIFICO
 
 	$Estudiantes->update($datos['est_nombres'],
 		$datos['est_apellidos'],
@@ -20,6 +23,10 @@ if(empty($datos['est_id'])){ ///CREO UN NUEVO ESTUDIANTE
 		$datos['est_ciudad'],
 		$datos['est_edad'],
 		$datos['est_genero'],$datos['est_id']);	
+
+    }else{  ///ELIMINO
+       $Estudiantes->delete($datos['est_id']);
+    }
 
 }
 

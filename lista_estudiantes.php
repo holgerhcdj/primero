@@ -73,7 +73,7 @@ $consulta=$Estudiantes->listar_estudiantes();
 			          <img src='edit.png'/>
 			      </a>
 			          
-			      <a href=''>
+			      <a href='acciones_estudiantes.php?est_id={$c["est_id"]}' onclick='return validar() '   >
 			           <img src='delete.png'/>
 			      </a>
 
@@ -88,3 +88,14 @@ $consulta=$Estudiantes->listar_estudiantes();
 	</table>
 </body>
 </html>
+<script>
+	function validar(){
+
+		if( confirm("Desea Eliminar el Estudiante") ){
+           return true;
+		}else{
+			return false;
+		}
+
+	}
+</script>

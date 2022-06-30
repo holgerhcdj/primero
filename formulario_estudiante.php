@@ -2,8 +2,12 @@
 require_once("Estudiantes.php");
 $Estudiantes=new Estudiantes();
 
-if(isset($_GET['est_id'])){
+if(isset($_GET['est_id'])){ ///DEL EDITAR
 	$datos=$Estudiantes->edit( $_GET['est_id'] );
+}else{                     ///DEL NUEVO
+	$datos['est_id']=NULL;
+	$datos['est_nombres']=NULL;
+	$datos['est_ciudad']='QUITO';
 }
 
 

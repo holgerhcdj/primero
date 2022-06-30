@@ -43,6 +43,10 @@ class Estudiantes extends Conection{
                 ");  
     }
 
+    function delete($est_id){
+        $this->con->query("DELETE FROM estudiantes WHERE est_id=$est_id");
+    }
+
 
 }
 
